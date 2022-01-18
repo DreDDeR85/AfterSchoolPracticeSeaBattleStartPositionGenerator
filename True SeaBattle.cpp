@@ -300,204 +300,100 @@ int main() {
 		SeaBattle[vpos4[i] / 10][vpos4[i] % 10] = '*';
 	}
 
-	// Pervy Trehpalubniy Korabl
+	// Trehpalubnie Korabli
 	int pos3 = randnum();
 	string spos3 = povorot(pos3, 3, SeaBattle);
 	vector <int> vpos3(3);
 	int k_v3 = 0, k_ch3 = 1;
 	temp = 0;
-	for (int i = 0; i < spos3.length(); i++) {
-		if (spos3[i] != ' ') {
-			temp += ((int)spos3[i] - '0') * pow(10, k_ch3);
-			k_ch3--;
+	for (int temporary = 0; temporary < 2; temporary++) {
+		pos3 = randnum();
+		spos3 = povorot(pos3, 3, SeaBattle);
+		vpos3[0] = 0;
+		vpos3[1] = 0;
+		vpos3[2] = 0;
+		k_v3 = 0;
+		k_ch3 = 1;
+		temp = 0;
+		for (int i = 0; i < spos3.length(); i++) {
+			if (spos3[i] != ' ') {
+				temp += ((int)spos3[i] - '0') * pow(10, k_ch3);
+				k_ch3--;
+			}
+			else {
+				vpos3[k_v3] = temp;
+				temp = 0;
+				k_ch3 = 1;
+				k_v3++;
+			}
 		}
-		else {
-			vpos3[k_v3] = temp;
-			temp = 0;
-			k_ch3 = 1;
-			k_v3++;
-		}
-	}
-	for (int i = 0; i < vpos3.size(); i++) {
-		SeaBattle[vpos3[i] / 10][vpos3[i] % 10] = '*';
-	}
-
-	// Vtoroy Trehpalubniy Korabl
-	int pos3a = randnum();
-	string spos3a = povorot(pos3a, 3, SeaBattle);
-	vector <int> vpos3a(3);
-	int k_v3a = 0, k_ch3a = 1;
-	temp = 0;
-	for (int i = 0; i < spos3a.length(); i++) {
-		if (spos3a[i] != ' ') {
-			temp += ((int)spos3a[i] - '0') * pow(10, k_ch3a);
-			k_ch3a--;
-		}
-		else {
-			vpos3a[k_v3a] = temp;
-			temp = 0;
-			k_ch3a = 1;
-			k_v3a++;
+		for (int i = 0; i < vpos3.size(); i++) {
+			SeaBattle[vpos3[i] / 10][vpos3[i] % 10] = '*';
 		}
 	}
-	for (int i = 0; i < vpos3a.size(); i++) {
-		SeaBattle[vpos3a[i] / 10][vpos3a[i] % 10] = '*';
-	}
-
-	// Pervy Dvyhpalubniy Korabl
+	
+	// Dvyhpalubnie Korabli
 	int pos2a = randnum();
 	string spos2a = povorot(pos2a, 2, SeaBattle);
 	vector <int> vpos2a(2);
 	int k_v2a = 0, k_ch2a = 1;
 	temp = 0;
-	for (int i = 0; i < spos2a.length(); i++) {
-		if (spos2a[i] != ' ') {
-			temp += ((int)spos2a[i] - '0') * pow(10, k_ch2a);
-			k_ch2a--;
+	for (int temporary = 0; temporary < 3; temporary++) {
+		pos2a = randnum();
+		spos2a = povorot(pos2a, 2, SeaBattle);
+		vpos2a[0] = 0;
+		vpos2a[1] = 0;
+		k_v2a = 0; 
+		k_ch2a = 1;
+		temp = 0;
+		for (int i = 0; i < spos2a.length(); i++) {
+			if (spos2a[i] != ' ') {
+				temp += ((int)spos2a[i] - '0') * pow(10, k_ch2a);
+				k_ch2a--;
+			}
+			else {
+				vpos2a[k_v2a] = temp;
+				temp = 0;
+				k_ch2a = 1;
+				k_v2a++;
+			}
 		}
-		else {
-			vpos2a[k_v2a] = temp;
-			temp = 0;
-			k_ch2a = 1;
-			k_v2a++;
+		for (int i = 0; i < vpos2a.size(); i++) {
+			SeaBattle[vpos2a[i] / 10][vpos2a[i] % 10] = '*';
 		}
-	}
-	for (int i = 0; i < vpos2a.size(); i++) {
-		SeaBattle[vpos2a[i] / 10][vpos2a[i] % 10] = '*';
 	}
 
-	// Vtoroy Dvyhpalubniy Korabl
-	int pos2b = randnum();
-	string spos2b = povorot(pos2b, 2, SeaBattle);
-	vector <int> vpos2b(2);
-	int k_v2b = 0, k_ch2b = 1;
-	temp = 0;
-	for (int i = 0; i < spos2b.length(); i++) {
-		if (spos2b[i] != ' ') {
-			temp += ((int)spos2b[i] - '0') * pow(10, k_ch2b);
-			k_ch2b--;
-		}
-		else {
-			vpos2b[k_v2b] = temp;
-			temp = 0;
-			k_ch2b = 1;
-			k_v2b++;
-		}
-	}
-	for (int i = 0; i < vpos2b.size(); i++) {
-		SeaBattle[vpos2b[i] / 10][vpos2b[i] % 10] = '*';
-	}
-
-	// Tretiy Dvyhpalubniy Korabl
-	int pos2c = randnum();
-	string spos2c = povorot(pos2c, 2, SeaBattle);
-	vector <int> vpos2c(2);
-	int k_v2c = 0, k_ch2c = 1;
-	temp = 0;
-	for (int i = 0; i < spos2c.length(); i++) {
-		if (spos2c[i] != ' ') {
-			temp += ((int)spos2c[i] - '0') * pow(10, k_ch2c);
-			k_ch2c--;
-		}
-		else {
-			vpos2c[k_v2c] = temp;
-			temp = 0;
-			k_ch2c = 1;
-			k_v2c++;
-		}
-	}
-	for (int i = 0; i < vpos2c.size(); i++) {
-		SeaBattle[vpos2c[i] / 10][vpos2c[i] % 10] = '*';
-	}
-
-	// Pervy Odnopalybniy Korabl
+	// Odnopalybnie Korabli
 	int pos1a = randnum();
 	string spos1a = povorot(pos1a, 1, SeaBattle);
 	vector <int> vpos1a(1);
 	int k_v1a = 0, k_ch1a = 1;
 	temp = 0;
-	for (int i = 0; i < spos1a.length(); i++) {
-		if (spos1a[i] != ' ') {
-			temp += ((int)spos1a[i] - '0') * pow(10, k_ch1a);
-			k_ch1a--;
+	for (int temporary = 0; temporary < 4; temporary++) {
+		pos1a = randnum();
+		spos1a = povorot(pos1a, 1, SeaBattle);
+		vpos1a[0] = 1;
+		k_v1a = 0; 
+		k_ch1a = 1;
+		temp = 0;
+		for (int i = 0; i < spos1a.length(); i++) {
+			if (spos1a[i] != ' ') {
+				temp += ((int)spos1a[i] - '0') * pow(10, k_ch1a);
+				k_ch1a--;
+			}
+			else {
+				vpos1a[k_v1a] = temp;
+				temp = 0;
+				k_ch1a = 1;
+				k_v1a++;
+			}
 		}
-		else {
-			vpos1a[k_v1a] = temp;
-			temp = 0;
-			k_ch1a = 1;
-			k_v1a++;
+		for (int i = 0; i < vpos1a.size(); i++) {
+			SeaBattle[vpos1a[i] / 10][vpos1a[i] % 10] = '*';
 		}
-	}
-	for (int i = 0; i < vpos1a.size(); i++) {
-		SeaBattle[vpos1a[i] / 10][vpos1a[i] % 10] = '*';
 	}
 
-	// Vtoroi Odnopalybniy Korabl
-	int pos1b = randnum();
-	string spos1b = povorot(pos1b, 1, SeaBattle);
-	vector <int> vpos1b(1);
-	int k_v1b = 0, k_ch1b = 1;
-	temp = 0;
-	for (int i = 0; i < spos1b.length(); i++) {
-		if (spos1b[i] != ' ') {
-			temp += ((int)spos1b[i] - '0') * pow(10, k_ch1b);
-			k_ch1b--;
-		}
-		else {
-			vpos1b[k_v1b] = temp;
-			temp = 0;
-			k_ch1b = 1;
-			k_v1b++;
-		}
-	}
-	for (int i = 0; i < vpos1b.size(); i++) {
-		SeaBattle[vpos1b[i] / 10][vpos1b[i] % 10] = '*';
-	}
-
-	// Tretiy Odnopalybniy Korabl
-	int pos1c = randnum();
-	string spos1c = povorot(pos1c, 1, SeaBattle);
-	vector <int> vpos1c(1);
-	int k_v1c = 0, k_ch1c = 1;
-	temp = 0;
-	for (int i = 0; i < spos1c.length(); i++) {
-		if (spos1c[i] != ' ') {
-			temp += ((int)spos1c[i] - '0') * pow(10, k_ch1c);
-			k_ch1c--;
-		}
-		else {
-			vpos1c[k_v1c] = temp;
-			temp = 0;
-			k_ch1c = 1;
-			k_v1c++;
-		}
-	}
-	for (int i = 0; i < vpos1c.size(); i++) {
-		SeaBattle[vpos1c[i] / 10][vpos1c[i] % 10] = '*';
-	}
-
-	// Chetvertiy Odnopalybniy Korabl
-	int pos1d = randnum();
-	string spos1d = povorot(pos1d, 1, SeaBattle);
-	vector <int> vpos1d(1);
-	int k_v1d = 0, k_ch1d = 1;
-	temp = 0;
-	for (int i = 0; i < spos1d.length(); i++) {
-		if (spos1d[i] != ' ') {
-			temp += ((int)spos1d[i] - '0') * pow(10, k_ch1d);
-			k_ch1d--;
-		}
-		else {
-			vpos1d[k_v1d] = temp;
-			temp = 0;
-			k_ch1d = 1;
-			k_v1d++;
-		}
-	}
-	for (int i = 0; i < vpos1d.size(); i++) {
-		SeaBattle[vpos1d[i] / 10][vpos1d[i] % 10] = '*';
-	}
-
+	// Vivod
 	cout << "# 0 1 2 3 4 5 6 7 8 9" << endl;
 	for (int i = 0; i < 10; i++) {
 		cout << i << " ";
